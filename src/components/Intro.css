@@ -1,0 +1,41 @@
+.intro1-txt {
+    color: #FB4264;
+    text-shadow: 0 0 3vw #F40A35;
+  }
+  
+  .intro2-txt {
+    color: #426DFB;
+    text-shadow: 0 0 3vw #2356FF;
+  }
+  
+  .intro1-txt {
+    animation: intro1-txt 1s ease infinite;
+    -moz-animation: intro1-txt 1s ease infinite;
+    -webkit-animation: intro1-txt 1s ease infinite;
+  }
+  
+  @keyframes intro1-txt {
+    0%,
+    100% {
+      text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #ffc800, .1vw .1vw .1vw #806914;
+      color: #FED128;
+    }
+
+  }
+  
+  .intro2-txt {
+    animation: intro2-txt 2s linear infinite;
+    -moz-animation: intro2-txt 2s linear infinite;
+    -webkit-animation: intro2-txt 2s linear infinite;
+    -o-animation: intro2-txt 2s linear infinite;
+  }
+  
+  @keyframes intro2-txt {
+    0%,
+    100% {
+      text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+      color: #28D7FE;
+    }
+
+  }
+  
