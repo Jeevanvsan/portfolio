@@ -9,7 +9,7 @@ const Intro = () => {
     const currentYear = new Date().getFullYear();
     const age =  currentYear - 2001 
 
-    // const scrollRef = useRef();
+    // const scrollRef = useRef(); 
 
     useGSAP(() =>{
         gsap.to('.intro-text',{
