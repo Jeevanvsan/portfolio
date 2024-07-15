@@ -1,0 +1,206 @@
+.skill-main{
+    height: 90vh;
+}
+
+
+
+
+@keyframes hologram {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.8);
+    }
+}
+
+table {
+    width: 300px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+.skill-level {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.5), rgba(0, 255, 255, 0.2));
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-level::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    animation: scanning 3s linear infinite;
+}
+
+@keyframes scanning {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.skill-level.beginner {
+    width: 33%;
+}
+
+.skill-level.intermediate {
+    width: 66%;
+}
+
+.skill-level.advanced {
+    width: 100%;
+}
+
+.skills_holo_div {
+    background-color: #000;
+    display: flex;
+    justify-content: end;
+    margin-right: 20%;
+  }
+
+  /* .card::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 6px rgba(90, 155, 216, 0.3);
+      border-radius: 10px;
+      background-color: transparent;
+  } */
+  
+  /* .card::-webkit-scrollbar
+  {
+      width: 4px;
+      background-color: transparent;
+  }
+  
+  .card::-webkit-scrollbar-thumb
+  {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: rgba(0, 255, 255);
+  } */
+  
+  .card {
+    z-index: 2;
+    padding-top: 30px;
+    color:rgba(0, 255, 255);
+    position: absolute;
+    width:250px;
+    overflow: auto;
+    animation: float 1s infinite alternate;
+  }
+  
+  .holo {
+    bottom: 40%;
+    margin-right: 60px;
+    position: absolute;
+    z-index: 2;
+    width: 350px;
+    height: 5px;
+    background-color: rgba(0, 252, 252, 0.35);
+    border-radius: 100%;
+    filter: blur(2.5px);
+    transform: perspective(100px) rotateX(-30deg);
+    transform-style: preserve-3d;
+    animation: holographic 1.5s infinite alternate;
+    backface-visibility: hidden;
+  }
+  
+  .holo:after {
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    content: "";
+    height: 10px;
+    background-color: rgba(0, 252, 252, 0.5);
+    border-radius: 100%;
+    filter: blur(2.5px);
+  }
+  
+  .holo + .holo {
+    animation-duration: 0.75s;
+    opacity: 0.5;
+  }
+  
+  @keyframes float {
+    from {
+      will-change: unset;
+      transform: translateY(-10px);
+    }
+    to {
+      will-change: transform;
+      transform: translateY(-30px);
+    }
+  }
+  
+  @keyframes holographic {
+    from {
+      will-change: box-shadow;
+      box-shadow: 0 -75px 5px rgba(0, 252, 252, 0.15),
+        0 -1px 2px rgba(0, 252, 252, 0.5),
+        0 -45px 5px rgba(0, 252, 252, 0.15),
+        0 -2px 3px rgba(0, 252, 252, 0.5),
+        0 -3px 4px rgba(0, 252, 252, 0.5),
+        0 -4px 6px rgba(0, 252, 252, 0.5),
+        0 -5px 10px rgba(0, 252, 252, 0.75),
+        0 -7px 20px rgba(0, 252, 252, 0.75),
+        0 -10px 30px rgba(0, 252, 252, 0.75),
+        0 -15px 40px rgba(0, 252, 252, 0.75),
+        0 -25px 50px rgba(0, 252, 252, 0.75),
+        0 -35px 60px rgba(0, 252, 252, 0.85),
+        0 -45px 70px rgba(0, 252, 252, 0.95),
+        0 -65px 80px rgba(0, 252, 252, 1),
+        0 -75px 90px rgba(0, 252, 252, 1);
+    }
+    to {
+      will-change: unset;
+      box-shadow: 0 -1px 5px rgba(0, 252, 252, 0.15),
+        0 -1px 2px rgba(0, 252, 252, 0.5),
+        0 -1px 5px rgba(0, 252, 252, 0.15),
+        0 -2px 3px rgba(0, 252, 252, 0.5),
+        0 -3px 4px rgba(0, 252, 252, 0.5),
+        0 -4px 6px rgba(0, 252, 252, 0.5),
+        0 -5px 7px rgba(0, 252, 252, 0.75),
+        0 -7px 10px rgba(0, 252, 252, 0.75),
+        0 -10px 15px rgba(0, 252, 252, 0.75),
+        0 -15px 20px rgba(0, 252, 252, 0.75),
+        0 -25px 25px rgba(0, 252, 252, 0.75),
+        0 -35px 30px rgba(0, 252, 252, 0.85),
+        0 -45px 35px rgba(0, 252, 252, 0.95),
+        0 -65px 40px rgba(0, 252, 252, 1),
+        0 -75px 50px rgba(0, 252, 252, 1);
+    }
+}
+
+.slick-initialized {
+    height: 100px;
+    width: 500px;
+
+}
+
+.slick-list{
+    margin-top: 10px;
+    padding: 50px;
+    height: 350px;
+}
+
+.slick-slide > div{
+    margin: 0 90px;
+}
+
+.slick-dots{
+    top:0;
+}
+

@@ -2,14 +2,16 @@ import Intro from "./components/Intro"
 import Navbar from "./components/Navbar"
 import Skills from "./components/Skills"
 import "./App.css"
+import WebgiViewer from "./components/WebgiViewer"
 
 const  App = () => {
 
   return (
-  <main style={{ backgroundImage: `url(/src/assets/main_bg.gif)`}} className="main-container">
+  <main  className="main-container bg-black">
     <Navbar />
     <Intro />
     <Skills />
+    <WebgiViewer/>
   </main>
     
   )

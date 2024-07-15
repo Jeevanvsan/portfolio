@@ -1,5 +1,6 @@
 .intro1-txt {
     color: #FB4264;
+    font-size: 18px;
     text-shadow: 0 0 3vw #F40A35;
   }
   
@@ -38,4 +39,8 @@
     }
 
   }
+
+.intro-main{
+  height: 60vh;
+}
   

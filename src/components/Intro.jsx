@@ -22,16 +22,18 @@ const Intro = () => {
         }) 
     },[])
 
+    
+
 
   return (
-    <section className="w-full nav-height relative">
-        <div className="h-screen w-full flex-center flex-col">
+    <section className="intro-main w-full nav-height relative">
+        <div className="w-full flex-center flex-col">
             <p 
-            className="intro1-txt intro-text mt-40 text-center font-semibold text-3xl text-gray-100 opacity-0 max-md:mb-10">
+            className="intro1-txt intro-text mt-60 text-center font-semibold text-6xl text-gray-100 opacity-0 max-md:mb-10">
                 Hi, I am Jeevan Varghese.
             </p>
             <p
-            className="intro2-txt intro-text mt-2 text-center font-semibold  text-gray-500 opacity-0 max-md:mb-10"
+            className="intro2-txt intro-text mt-2 text-center font-semibold text-3xl  text-gray-500 opacity-0 max-md:mb-10"
             >
                 {age} years old Software developer & Data Analyst.
             </p>

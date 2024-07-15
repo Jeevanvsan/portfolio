@@ -1,12 +1,19 @@
-.main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Adjust as needed */
-    align-items: center; /* Align content in the center vertically */
-    background-image: url('/src/assets/main_bg.gif'); /* Background image */
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent background from repeating */
-    color: #ffffff; /* Text color */
-    padding: 20px; /* Adjust padding as needed */
-  }
+/* Hide scrollbars in WebKit-based browsers (like Chrome, Safari) */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars in Firefox */
+html {
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* Hide scrollbars for all elements in WebKit-based browsers */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for all elements in Firefox */
+* {
+  scrollbar-width: none; /* For Firefox */
+}
