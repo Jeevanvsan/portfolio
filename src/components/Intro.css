@@ -18,7 +18,7 @@
   @keyframes intro1-txt {
     0%,
     100% {
-      text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #ffc800, .1vw .1vw .1vw #806914;
+      text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 0vw #FA1C16, 0 0 .4vw #ffc800, .1vw .1vw .1vw #806914;
       color: #FED128;
     }
 
@@ -34,13 +34,35 @@
   @keyframes intro2-txt {
     0%,
     100% {
-      text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+      text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 0vw #1041FF, 0 0 .4vw #8BFDFE, .0vw .0vw .1vw #147280;
       color: #28D7FE;
     }
 
   }
 
-.intro-main{
-  height: 60vh;
+  .intro-main {
+    height: 92vh;
+    background-image: url("../assets/into_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.explore-button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+.explore-button:hover {
+  background-color: #004d99; /* Darker blue */
+}
+
+.scroll-text {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
   

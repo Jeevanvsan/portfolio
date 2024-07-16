@@ -17,3 +17,12 @@ html {
 * {
   scrollbar-width: none; /* For Firefox */
 }
+
+.mute-button{
+  background: transparent;
+  color: rgba(0, 255, 255);
+  font-size: 24px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: 1px double rgba(0, 255, 255);
+}
