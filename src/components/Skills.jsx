@@ -1,17 +1,17 @@
-import "./Skill.css"
-import Slider from "react-slick"
-import { useEffect } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import "./Skill.css";
+import Slider from "react-slick";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
-
+import gsap from "gsap";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import gsap from "gsap";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-
-const Skills = () => {
+const Skills = ({ isMuted, setIsMuted }) => {
   const settings = {
     infinite: true,
     speed: 500,
@@ -23,35 +23,37 @@ const Skills = () => {
     pauseOnHover: true
   };
 
+  const audioRef = useRef(null);
+
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.skill-main',
+        trigger: '.skills_holo_div',
         start: 'top center',
         end: 'top top',
-        scrub: 2
+        scrub: 2,
+        onEnter: () => {
+          if (!isMuted && audioRef.current) {
+            audioRef.current.volume = 0.1;
+            audioRef.current.play();
+          }
+        }
       }
     });
 
     tl.to('.skills_holo_div', {
       opacity: 1,
-      ease:"bounce.inOut"
+      ease: "bounce.inOut"
     });
 
-    // Refresh ScrollTrigger to ensure everything is properly initialized
-    ScrollTrigger.refresh();
 
-    // Clean up the ScrollTrigger instance on component unmount
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  }, [isMuted]);
 
   return (
     <section className="skill-main w-full nav-height relative">
       <div className="skills_holo_div opacity-0">
-      <Slider {...settings}>
-          <div className="code-container card">
+        <Slider {...settings}>
+        <div className="code-container card">
                 <table>
                   <tbody>
                   <tr>
@@ -156,13 +158,12 @@ const Skills = () => {
                     
                 </table>
             </div>
-            
         </Slider>
-
         <div className="holo"></div>
-     </div>
+      </div>
+      <audio ref={audioRef} src="hologram.mp3" muted={isMuted} />
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

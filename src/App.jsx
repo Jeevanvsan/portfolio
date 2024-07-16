@@ -6,6 +6,8 @@ import "./App.css";
 import WebgiViewer from "./components/WebgiViewer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const App = () => {
@@ -30,7 +32,7 @@ const App = () => {
   };
 
   const playScroll = () =>{
-      console.log(isMuted)
+      // console.log(isMuted)
   }
 
   const toggleMute = () => {
@@ -38,6 +40,10 @@ const App = () => {
       audioRef.current.muted = !audioRef.current.muted;
       setIsMuted(audioRef.current.muted);
     }
+  };
+
+  const scrollUp = () => {
+    window.scrollTo({ top: 0, left:0,behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -50,7 +56,7 @@ const App = () => {
       document.removeEventListener('scroll', playScroll);
       document.removeEventListener('click', handleUserInteraction);
     };
-  }, [isMuted]);
+  }, []);
 
   useEffect(() => {
     // Prevent scrolling initially
@@ -61,18 +67,29 @@ const App = () => {
     <main className="main-container bg-black">
       <Navbar />
       <Intro />
-      <Skills />
+      <Skills isMuted={isMuted}/>
       <WebgiViewer />
       {isPlaying && (
         <button 
           onClick={toggleMute} 
-          className="mute-button"
+          className="mute-button btn"
           style={{ position: 'fixed', top: 20, left: 20, zIndex: 1000}}
         >
             <FontAwesomeIcon icon={isMuted ? faVolumeUp : faVolumeMute} />
         </button>
         
       )}
+
+      {isPlaying && (
+                <button 
+                onClick={scrollUp} 
+                className="up-button btn"
+                style={{ position: 'fixed', bottom: 20, right: 20, zIndex: 1000}}
+              >
+                  <FontAwesomeIcon icon={faArrowUp} />
+              </button>
+              
+            )}
     </main>
   );
 };
